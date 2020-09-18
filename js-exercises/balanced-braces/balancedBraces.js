@@ -1,22 +1,38 @@
+class Stack {
+  constructor() {
+    this.stack = [];
+  }
+
+  push(element) {
+    this.stack.push(element);
+  }
+
+  pop() {
+    if (this.isEmpty()) return 'Stack is empty!';
+    return this.stack.pop();
+  }
+
+  isEmpty() {
+    return !this.stack.length;
+  }
+}
 function balancedBraces(...args) {
-  const brackets = '[]{}()<>';
-  const stack = [];
+  const bracesArray = args[0].match(/[{}()[\]]/g);
+  const openingBracesOrder = new Stack();
+  const bracesMap = new Map([
+    ['(', ')'],
+    ['{', '}'],
+    ['[', ']'],
+  ]);
 
-  for (const bracket of args) {
-    const bracketsIndex = brackets.indexOf(bracket);
-
-    if (bracketsIndex === -1) {
-      // eslint-disable-next-line no-continue
-      continue;
-    }
-
-    if (bracketsIndex % 2 === 0) {
-      stack.push(bracketsIndex + 1);
-    } else if (stack.length === 0 || stack.pop() !== bracketsIndex) {
+  for (const brace of bracesArray) {
+    if (bracesMap.has(brace)) {
+      openingBracesOrder.push(brace);
+    } else if (bracesMap.get(openingBracesOrder.pop()) !== brace) {
       return false;
     }
   }
-  return stack.length === 0;
+  return openingBracesOrder.isEmpty();
 }
 
 export {
