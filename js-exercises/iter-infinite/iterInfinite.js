@@ -36,7 +36,7 @@ function* cycle(iter, n) {
 // repeat Function
 function* repeat(value, n) {
   checkValidNumber(n);
-  while (n) {
+  while (n--) {
     yield value;
   }
 }
