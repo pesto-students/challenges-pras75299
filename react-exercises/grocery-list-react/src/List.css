@@ -1,0 +1,66 @@
+.displayListBox {
+  margin: 25px auto;
+  width: 70%;
+  background: #fcfcfc;
+  border-radius: 10px;
+  border: #e7e7e7 solid 1px;
+  padding: 20px;
+}
+.unorderGrocery-list {
+  list-style: none;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+h1 {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 15px;
+  color: #444;
+  display: block;
+}
+
+.unorderGrocery-list li {
+  background: #ddd;
+  width: 156px;
+  height: 115px;
+  color: #000;
+  text-align: center;
+  border-radius: 7px;
+  box-shadow: #656565 0 2px 6px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  place-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.unorderGrocery-list .card{
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.card a.remove{
+  position: absolute;
+  right: 5px;
+  top: -5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.card a.remove:hover{
+  text-decoration: none;
+}
+
+.card-title{
+  font-size: 16px;
+  color: #777;
+  font-weight: normal;
+}
+.card-title span{
+  font-size: 20px;
+  color: rebeccapurple;
+  font-weight: 500;
+  text-transform: capitalize;
+}
