@@ -8,7 +8,7 @@ const List = (props) => (
       {props.items.map((item, index) => (
         <Card key={index}>
           <Card.Body key={index}>
-            <a class="remove">x</a>
+            <a className="remove">x</a>
             <Card.Title>Item Name: <span>{item}</span></Card.Title>
           </Card.Body>
         </Card>        
